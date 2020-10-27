@@ -1,15 +1,16 @@
 .landing-cards {
     justify-content: center;
     align-items: stretch;
-    max-width: 600px;
+    max-width: 800px;
     box-shadow: 1px 9px 30px -21px #000;
     margin: 10% auto;
 
     div {
-        flex: 1;
+      
         flex-direction: column;
 
         &.first {
+            flex: 1;
             text-align: center;
             order: 1;
 
@@ -32,6 +33,7 @@
                 max-height: 100px;
                 max-width: 70px;
                 margin: 0 10px;
+                
             }
         }
 
@@ -67,6 +69,30 @@
             &:hover {
                 box-shadow: none;
 
+            }
+        }
+    }
+}
+
+.Dashbord-cards{
+    div{
+        &.second{
+              flex-wrap: wrap;
+        flex-direction: unset; 
+        flex: 9;
+        }
+     
+        &.first {
+            flex: 4;
+        }
+        a{
+            flex: 1;
+            text-align: center;
+            &.sec-card,   &.thr-card {
+      
+                display: block;
+
+               
             }
         }
     }
