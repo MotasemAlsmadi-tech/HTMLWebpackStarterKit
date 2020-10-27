@@ -1,0 +1,86 @@
+$colors-list:$brand-secondary 0%,
+#40A291 80%,
+$brand-primary 100%;
+
+.weekly-calendar {
+    @include gradient(top, $colors-list);
+
+    .title {
+        color: $white;
+
+        .title__text {
+            font-size: 1.5rem;
+        }
+
+    }
+
+    .timeline {
+        padding: 1rem 6rem !important;
+
+        .day {
+            flex: 1;
+            text-align: center;
+            color: $white;
+            border-right: 1px solid;
+
+            &:last-child {
+                border: 0;
+            }
+
+            a {
+                color: $white;
+            }
+            .day-date {
+                font-size: 1rem;
+                color: $white;
+                background: transparent;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                
+            }
+            &.today{
+                .day-date {
+                  
+                    color: $brand-primary;
+                    background: #fff;
+                   
+                    
+                }
+            }
+        }
+    }
+}
+
+.calender-controls {
+    a {
+        position: absolute;
+        color: $white;
+        text-align: center;
+        text-decoration: none;
+
+        &.next-week {
+            right: 0;
+        }
+
+        &.prev-week {
+            left: 0;
+        }
+
+        i {
+            display: block;
+            font-size: 2rem;
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        span {
+            font-size: 0.6rem;
+        }
+    }
+}

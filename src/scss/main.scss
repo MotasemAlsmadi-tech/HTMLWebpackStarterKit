@@ -1,6 +1,17 @@
-@import 'components/normalize';
-@import 'components/variables';
-@import 'components/typography';
-@import 'components/icon';
-@import 'components/button';
-@import 'pages/base';
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/libs";
+@import "base/fonts";
+@import "base/general";
+@import "blocks/modules"; 
+//bootstrap-select
+//@import "../../node_modules/bootstrap-select/sass/variables.scss";
+//@import "../../node_modules/bootstrap-select/sass/bootstrap-select.scss";
+//components
+@import "../scss/components/horizental-calendar.scss";
+//custom style
+@import "style";
+@import "pages/landing-page.scss";
+
+

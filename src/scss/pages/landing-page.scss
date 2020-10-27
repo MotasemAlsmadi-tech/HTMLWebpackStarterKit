@@ -1,0 +1,73 @@
+.landing-cards {
+    justify-content: center;
+    align-items: stretch;
+    max-width: 600px;
+    box-shadow: 1px 9px 30px -21px #000;
+    margin: 10% auto;
+
+    div {
+        flex: 1;
+        flex-direction: column;
+
+        &.first {
+            text-align: center;
+            order: 1;
+
+            a {
+                padding: 25px;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+                max-height: 150px;
+
+            }
+        }
+
+        &.second {
+            order: 2;
+
+            img {
+                max-height: 100px;
+                max-width: 70px;
+                margin: 0 10px;
+            }
+        }
+
+        a {
+            color: $heading-text-color;
+            flex: 12;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: inset 0 0 41px -21px #666;
+            transition: ease-in-out 0.2s;
+            text-decoration: none;
+
+            &.main-card {
+                background-color: #DDF0ED;
+
+            }
+
+            &.sec-card {
+                background-color: #C4E8E3;
+                display: flex;
+
+                align-items: center;
+            }
+
+            &.thr-card {
+                background-color: #74B6A8;
+                display: flex;
+
+                align-items: center;
+            }
+
+            &:hover {
+                box-shadow: none;
+
+            }
+        }
+    }
+}

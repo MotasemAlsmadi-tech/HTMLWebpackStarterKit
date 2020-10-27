@@ -27,6 +27,7 @@ function generateHtmlPlugins (templateDir) {
         filename: `${name}.html`,
         template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
       })
+     
     })
   }
   
@@ -71,10 +72,10 @@ module.exports = {
                 use: [{
                         loader: "url-loader",
                         options: {
-                            name: "./images/[name].[ext]",
+                            name: "./img/[name].[ext]",
                             limit: 5000
                         }
-                    },
+                    }, 
                     {
                         loader: "img-loader"
                     }
@@ -120,8 +121,8 @@ module.exports = {
             filename: "css/main.[contenthash:8].css"
           }),
         new CopyWebpackPlugin([{
-            from: 'src/images',
-            to: 'images'
+            from: 'src/img',
+            to: 'img'
         }]),
         new webpack.ProvidePlugin({
             $: "jquery",
