@@ -128,6 +128,10 @@
         &.sec-card-2 {
             background-color: #C4E8E3;
         }
+        &:hover {
+            box-shadow: none;
+
+        }
     }
     .dashbord-links{
        a{text-align: center;
