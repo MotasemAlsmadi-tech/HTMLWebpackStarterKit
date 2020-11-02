@@ -401,3 +401,37 @@ table {
     padding: 5px 10px;
 
 }
+.status-inProgress {
+    background-color: $status-inProgress;
+    color: #fff;
+    padding: 5px 10px;
+
+}
+.status-Delayed {
+    background-color: $status-Delayed;
+    color: #fff;
+    padding: 5px 10px;
+
+   
+}
+.status-LackOfInfo {
+    background-color: $status-lackOfInfo;
+    color: #fff;
+    padding: 5px 10px;
+
+}
+.badge{
+    padding: 5px 11px;
+}
+.badge-default{
+    background-color:#E4E4E4;
+    color: #707070;
+}
+.badge-success{
+    background-color:  #B3F5B7;
+    color: #029A49;
+}
+.badge-danger{
+    background-color: #F2B0B0;
+    color: #9A0202;
+}
