@@ -321,7 +321,7 @@ button[data-toggle="collapse"] {
 
 .chart {
     width: 100%;
-    min-height: 450px;
+    min-height: 200px;
 }
 
 
@@ -434,4 +434,73 @@ table {
 .badge-danger{
     background-color: #F2B0B0;
     color: #9A0202;
+}
+
+.card-section{
+    .section-title{
+        font-size: 1rem;
+        margin-bottom: 8px;
+        &::before {
+            display: block;
+            content: "";
+               max-width: 130px;
+    height: 8px;
+    width: 100%;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTgyIiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAxODIgOCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cmVjdCB3aWR0aD0iMTgyIiBoZWlnaHQ9IjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBpZD0iYSIgY2xpcC1wYXRoPSJ1cmwoI2IpIj48cmVjdCB3aWR0aD0iMTgyIiBoZWlnaHQ9IjgiIGZpbGw9IiNmZmYiLz48cmVjdCB3aWR0aD0iNzUiIGhlaWdodD0iOCIgZmlsbD0iIzAwN2I2MSIvPjxyZWN0IHdpZHRoPSI3NSIgaGVpZ2h0PSI4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OSkiIGZpbGw9IiM2OGJiYWYiLz48cmVjdCB3aWR0aD0iNDYiIGhlaWdodD0iOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM2KSIgZmlsbD0iIzkyZDljZSIvPjwvZz48L3N2Zz4=);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-bottom: 2px;
+    }
+}
+}
+
+.row.count-circles > div {
+    text-align: center;
+    > .count {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        background-color: #B4E2DB;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.average{
+            background-color:#68BBAF;
+        }
+    }
+    p{
+        color: #6c757d;
+        font-size: 10px;
+    }
+}
+
+.complete-state{
+    background-color: $status-closed;
+}
+.Delayed-state{
+    background-color: $status-Delayed;
+}
+.lake-Info-state{
+    background-color: $status-lackOfInfo;
+}
+.on-Track-state{
+    background-color: $status-open;
+}
+.slightly-Delayed-state{
+    background-color: $status-inProgress;
+}
+.legends{
+    max-width:600px;
+    margin:10px auto;
+    .legend-item{
+        flex:1;
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        .color-indecator {
+            padding:5px;
+            margin:5px;
+        }
+    }
 }
