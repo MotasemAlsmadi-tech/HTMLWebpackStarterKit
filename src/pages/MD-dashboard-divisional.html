@@ -36,14 +36,14 @@
 
 <body class="dashboard-view">
     <%= require('html-loader!../blocks/headerv2.html') %>
-    <main class="container pt-3 pb-3" id="Dashboard">
+    <main class="container pt-3 pb-3 pl-0 pr-0" id="Dashboard">
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3 col-sm-12">
                 <h4 class="text-primary">STATUS</h4>
                 <div class="card">
 
-                    <div class="card-body">
-                        <div class="card-section">
+                    <div class="card-body row">
+                        <div class="card-section col-lg-12 col-md-12 col-sm-6 col-xs-12">
                             <b class="section-title">
                                 Projects
                             </b>
@@ -51,7 +51,7 @@
                                 <div id="piechart" class="chart"></div>
                             </div>
                         </div>
-                        <div class="card-section">
+                        <div class="card-section col-lg-12 col-md-12 col-sm-6 col-xs-12">
                             <b class="section-title">
                                 Programs
                             </b>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h4 class="text-primary">PROJECTS AND PROGRAMS</h4>
 
                 <div class="card">
@@ -87,21 +87,22 @@
 
                 </div>
             </div>
-            <div class="col-3">
-                <h4 style="visibility:hidden">title</h4>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <h4 class="text-primary">KPIs</h4>
                 <div class="card">
-                    <div class="card-body">
-                        <div class="card-section">
+                    <div class="card-body row">
+                     
+                        <div class="card-section col-lg-12 col-md-12 col-sm-4 col-xs-12">
                             <b class="section-title">
-                                Projects By Phase
+                                Sponsoring Initiatives
                             </b>
                             <div class="section-body">
-                                <div id="ProjectPhase" class="chart"></div>
+                                <div id="curve_chart" class="chart"></div>
                             </div>
                         </div>
-                        <div class="card-section">
+                        <div class="card-section mt-5 col-lg-12 col-md-12 col-sm-4 col-xs-12">
                             <b class="section-title">
-                                Projects Closed
+                                Owning Closed Projects 
                             </b>
                             <div class="section-body">
                                 <div class="row count-circles">
@@ -122,12 +123,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-section">
+                        <div class="card-section mt-4 col-lg-12 col-md-12 col-sm-4 col-xs-12">
                             <b class="section-title">
-                                Projects Closed
+                                Sponsoring Closed Projects 
                             </b>
                             <div class="section-body">
-                                <div id="curve_chart" class="chart"></div>
+                                <div class="row count-circles">
+                                    <div class="col">
+                                        <div class="count">12</div>
+                                        <p>On Time</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="count">12</div>
+                                        <p>With Delay</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="count average">30%</div>
+                                        <p>Average % of
+                                            Delay
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,6 +197,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../js/main.js"></script>
 
     <script>
         var landing = new Vue({
@@ -267,11 +284,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                     var chartProg = new google.visualization.PieChart(document.getElementById(
                         'piechartProgramms'));
-                    var chartProjectPhase = new google.visualization.PieChart(document.getElementById(
-                        'ProjectPhase'));
+              
                     chart.draw(data, options);
                     chartProg.draw(data, options);
-                    chartProjectPhase.draw(dataDonut, optionsDonut);
+                   
 
 
 
@@ -328,7 +344,7 @@
                     var optionsLine = {
                         colors: ['#68BBAF', '#007B61'],
                         chartArea: {
-                            bottom: 20,
+                            bottom: 40,
                             top: 20,
                             left: 20,
                             right: 20,
