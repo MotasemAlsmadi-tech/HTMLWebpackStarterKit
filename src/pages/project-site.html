@@ -185,28 +185,44 @@
                             <div class="card-header">
 
                                 <h4>
-                                    Project Progress Chart 
+                                    Project Progress Chart
                                     <br>
-                                    <span class="header-description text-muted">Donut Chart Showing Project progress in percentage</span>
+                                    <span class="header-description text-muted">Donut Chart Showing Project progress in
+                                        percentage</span>
                             </div>
                             <div class="card-body">
-                                 <!-- Progress bar 1 -->
-        <div class="progress mx-auto" data-value='80'>
-            <span class="progress-left">
-                          <span class="progress-bar border-primary"></span>
-            </span>
-            <span class="progress-right">
-                          <span class="progress-bar border-primary"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-              <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-            </div>
-          </div>
-          <!-- END -->
+                                <!-- Progress bar 1 -->
+                                <div class="progress mx-auto" :data-value='projectProgress'>
+                                    <span class="progress-left">
+                                        <span class="progress-bar border-secondary"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar border-secondary"></span>
+                                    </span>
+                                    <div
+                                        class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                        <div class="h2 font-weight-bold percentage">{{projectProgress}}<sup
+                                                class="small">%</sup></div>
+                                    </div>
+                                </div>
+                                <!-- END -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+
+                                <h4>
+                                    Project Budget Consumption 
+                                    <br>
+                                    <span class="header-description text-muted">Bar chart showing the percentage of budget consumption </span>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-4"></div>
                 </div>
             </div>
@@ -234,32 +250,32 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
-        $(function() {
+        $(function () {
 
-$(".progress").each(function() {
+            $(".progress").each(function () {
 
-  var value = $(this).attr('data-value');
-  var left = $(this).find('.progress-left .progress-bar');
-  var right = $(this).find('.progress-right .progress-bar');
+                var value = $(this).attr('data-value');
+                var left = $(this).find('.progress-left .progress-bar');
+                var right = $(this).find('.progress-right .progress-bar');
 
-  if (value > 0) {
-    if (value <= 50) {
-      right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-    } else {
-      right.css('transform', 'rotate(180deg)')
-      left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-    }
-  }
+                if (value > 0) {
+                    if (value <= 50) {
+                        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                    } else {
+                        right.css('transform', 'rotate(180deg)')
+                        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                    }
+                }
 
-})
+            })
 
-function percentageToDegrees(percentage) {
+            function percentageToDegrees(percentage) {
 
-  return percentage / 100 * 360
+                return percentage / 100 * 360
 
-}
+            }
 
-});
+        });
 
         /* Get the documentElement (<html>) to display the page in fullscreen */
         var elem = document.documentElement;
@@ -299,6 +315,7 @@ function percentageToDegrees(percentage) {
                 today: new Date(),
                 weekMonth: [],
                 weekYear: [],
+                projectProgress: 20
 
             },
             created: function () {
