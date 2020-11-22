@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
+    font-weight: 400;
 }
 
 .page-header__title {
@@ -331,8 +332,11 @@ button[data-toggle="collapse"] {
         border-left: 5px solid $brand-primary;
 
         h4 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             flex: 1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
 
             .header-description {
                 font-size: 0.7rem;
@@ -548,19 +552,139 @@ table {
     }
 }
 
-.list-group-item{
+.list-group-item {
     display: flex;
-    span{
+
+    span {
         flex: 2;
         display: inline-block;
         padding: 0.5rem 1.25rem;
-        &:first-child{
-background-color: #F2F2F2;
-color: $brand-primary;
+
+        &:first-child {
+            background-color: #F2F2F2;
+            color: $brand-primary;
         }
-        &:last-child{
-        flex: 4;
+
+        &:last-child {
+            flex: 4;
         }
     }
 
 }
+
+.budget-amount {
+    flex: 1;
+    text-align: center;
+
+    span {
+        color: #A1A1A1;
+    }
+
+    p {
+        font-size: 1.2rem;
+
+        >span {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.budget-chart {
+    height: 46px;
+    color: #fff;
+    margin-top: 24px;
+    >div {
+        border: 2px solid #fff;
+    }
+}
+
+.total-budget {
+    background-color: $brand-secondary;
+    justify-content: center;
+    align-items: center;
+}
+
+.Consumed-budget {
+    background-color: $brand-danger;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.activities-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li{
+        padding: 4px 7px;
+        border-top: 1px solid #ccc;
+        font-weight: 300;
+        a{
+            align-items: center;
+            div{
+                flex: 1;
+                &.activity-info{
+                    max-width: 78%;
+                    .activity-details {
+                        font-size: .7rem;
+                        span{
+                            display: block;
+                            padding: 0 2px;
+                            strong{
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+                &.status{
+                    flex-direction: row-reverse;    
+                }
+            }
+            p{
+                font-size: 0.9rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 100%;
+                overflow: hidden;
+            }
+        }
+        &:first-child{
+            border-top: 0;
+        }
+
+    }
+}
+
+.p-facts{
+    h2{
+        font-weight: 400;
+    }
+}
+
+.nav-tabs{
+    li{
+        a{
+            font-size: 1rem;
+            border: 0;
+            font-weight: 500;
+            color: #000;
+            &.active{
+                
+                border-bottom: 3px solid $brand-secondary !important;
+            }
+        }
+    }
+}
+.nav-tabs .nav-link{
+    border: 0;
+    border-radius: 0;
+}
+
+//imapcts status
+
+
+
+.impact-critical{background-color:$impact-critical;}
+.impact-major{background-color: $impact-major;}
+.impact-moderate{background-color: $impact-moderate;}
+.impact-minor{background-color: $impact-minor;}

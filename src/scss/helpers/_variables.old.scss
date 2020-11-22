@@ -1,7 +1,7 @@
 $brand-primary:#037b60;
 $brand-secondary:#68BBAF;
 $brand-success:#68BB68;
-$brand-danger:#E88282;
+$brand-danger:#FF2929;
 $brand-warning: #E4952D;
 $header-icon-color:#A1A1A1;
 $header-bg-color:#fff;
@@ -17,18 +17,3 @@ $status-inProgress: #ED8B00;
 $status-Delayed: #FF2929;
 $status-lackOfInfo:#BFBFBF;
 
-.complete-state{
-    background-color: $status-closed;
-}
-.Delayed-state{
-    background-color: $status-Delayed;
-}
-.lake-Info-state{
-    background-color: $status-lackOfInfo;
-}
-.on-Track-state{
-    background-color: $status-open;
-}
-.slightly-Delayed-state{
-    background-color: $status-inProgress;
-}

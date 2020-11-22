@@ -84,7 +84,7 @@
 
     <main class="container pt-3 pb-3 pl-0 pr-0" id="ProjectSite">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-none">
                 <button type="button" class="btn btn-secondary text-white">Project Info</button>
             </div>
             <div class="col-12">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-4 mb-4">
+            <div class="col-12 mt-3 mb-3">
                 <div class="weekly-calendar card border-0 p-3">
                     <div class="title">
                         <span class="title__text">This Week</span>
@@ -178,17 +178,19 @@
 
                 </div>
             </div>
-            <div class="col-12 mt-4 mb-4">
+            <div class="col-12 ">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
 
                                 <h4>
                                     Project Progress Chart
+
                                     <br>
                                     <span class="header-description text-muted">Donut Chart Showing Project progress in
                                         percentage</span>
+                                </h4>
                             </div>
                             <div class="card-body">
                                 <!-- Progress bar 1 -->
@@ -209,21 +211,471 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
 
                                 <h4>
-                                    Project Budget Consumption 
+                                    Project Budget Consumption
+
                                     <br>
-                                    <span class="header-description text-muted">Bar chart showing the percentage of budget consumption </span>
+                                    <span class="header-description text-muted">Bar chart showing the percentage of
+                                        budget consumption </span>
+                                </h4>
                             </div>
                             <div class="card-body">
-                                
+                                <div class="p-2 d-flex">
+                                    <div class="budget-amount">
+                                        <span>Total Amount</span>
+                                        <p class="text-secondary">70,000 <span>Riyal</span></p>
+                                    </div>
+                                    <div class="budget-amount">
+                                        <span>Consumed Amount</span>
+                                        <p class="text-danger">50,300 <span>Riyal</span></p>
+                                    </div>
+                                </div>
+                                <div class="budget-chart d-flex">
+                                    <div class="total-budget d-flex" :style="{width:NotCosumedPercent }">
+                                        {{NotCosumedPercent}}</div>
+                                    <div class="Consumed-budget d-flex" :style="{width:ConsumedPercent }">
+                                        {{ConsumedPercent}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-4 col-sm-12 mt-3 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+
+                                <h4>
+                                    Today's Tasks - Activities
+
+                                    <br>
+                                    <span class="header-description text-muted">upcoming 3 activities
+                                    </span>
+                                </h4>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="activities-list">
+                                    <li>
+                                        <a class="activity-item d-flex" href="#">
+                                            <div class="activity-info">
+                                                <p class="activity-title mb-0">Task Name or Description <span
+                                                        class="link-icon"><svg width="1em" height="1em"
+                                                            viewBox="0 0 16 16" class="bi bi-arrow-up-right"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z" />
+                                                        </svg></span>
+
+                                                </p>
+                                                <div class="activity-details">
+                                                    <span class="title text-muted">Assgin To : <strong>Motasem
+                                                            Alsmadi</strong></span>
+                                                    <span class="title text-muted">Due Date :
+                                                        <strong>27/12/2020</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="status d-flex">
+                                                <span class="badge badge-warning">Pending</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="activity-item d-flex" href="#">
+                                            <div class="activity-info">
+                                                <p class="activity-title mb-0">Task Name or Description <span
+                                                        class="link-icon"><svg width="1em" height="1em"
+                                                            viewBox="0 0 16 16" class="bi bi-arrow-up-right"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z" />
+                                                        </svg></span>
+
+                                                </p>
+                                                <div class="activity-details">
+                                                    <span class="title text-muted">Assgin To : <strong>Motasem
+                                                            Alsmadi</strong></span>
+                                                    <span class="title text-muted">Due Date :
+                                                        <strong>27/12/2020</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="status d-flex">
+                                                <span class="badge badge-warning">Pending</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="activity-item d-flex" href="#">
+                                            <div class="activity-info">
+                                                <p class="activity-title mb-0">Task Name or Description <span
+                                                        class="link-icon"><svg width="1em" height="1em"
+                                                            viewBox="0 0 16 16" class="bi bi-arrow-up-right"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z" />
+                                                        </svg></span>
+
+                                                </p>
+                                                <div class="activity-details">
+                                                    <span class="title text-muted">Assgin To : <strong>Motasem
+                                                            Alsmadi</strong></span>
+                                                    <span class="title text-muted">Due Date :
+                                                        <strong>27/12/2020</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="status d-flex">
+                                                <span class="badge badge-warning">Pending</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row d-flex">
+                    <div class="col-12 mt-3 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row p-facts">
+                                    <div class="col-md-4 col-sm-4 mb-4 col-xs-12 text-center">
+                                        <p class="text-center mb-1">Milestons</p>
+                                        <h2 class="text-primary">75</h2>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 mb-4 col-xs-12 text-center">
+
+                                        <p class="text-center mb-1">Issues Reported</p>
+                                        <h2 class="text-warning">20</h2>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 mb-4 col-xs-12 text-center">
+
+                                        <p class="text-center mb-1">Riskes</p>
+                                        <h2 class="text-danger">5</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3 mb-3">
+                        <div class="card">
+                            <div class="card-header p-0">
+                                <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                      <a class="nav-link active" id="Milestons-tab" data-toggle="tab" href="#Milestons" role="tab" aria-controls="home" aria-selected="true">Milestons</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" id="Issues-tab" data-toggle="tab" href="#Issues" role="tab" aria-controls="Issues" aria-selected="false">Issues</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" id="Riskes-tab" data-toggle="tab" href="#Riskes" role="tab" aria-controls="Riskes" aria-selected="false">Riskes</a>
+                                    </li>
+                                  </ul>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="Milestons" role="tabpanel" aria-labelledby="Milestons-tab">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">MID</th>
+                                                    <th scope="col">Milestones/Main Tasks</th>
+                                                    <th scope="col">Start Date</th>
+                                                    <th scope="col"> Actual/Forecasted End Date</th>
+                                                    <th scope="col">Weight</th>
+                                                    <th scope="col">Completion</th>
+                                                    <th scope="col">Status</th> 
+                                                    <th></th>
+                
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">MID0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020 - 20/10/2020</td>
+                                                <td><b>30%</b></td>
+                                                    <td><b>10%</b></td>
+                                                    <td><span class="badge complete-state text-white">Compeleted</span></td>
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">MID0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020 - 20/10/2020</td>
+                                                    <td><b>30%</b></td>
+                                                    <td><b>10%</b></td>
+                                                    <td><span class="badge slightly-Delayed-state text-white">In Progress</span></td>
+
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">MID0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020 - 20/10/2020</td>
+                                                    <td><b>30%</b></td>
+                                                    <td><b>10%</b></td>
+                                                    <td><span class="badge Delayed-state text-white">Delayed</span></td>
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">MID0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020 - 20/10/2020</td>
+                                                    <td><b>30%</b></td>
+                                                    <td><b>10%</b></td>
+                                                    <td><span class="badge Delayed-state text-white">Delayed</span></td>
+
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">MID0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020 - 20/10/2020</td>
+                                                    <td><b>30%</b></td>
+                                                    <td><b>10%</b></td>
+                                                    <td><span class="badge Delayed-state text-white">Delayed</span></td>
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                
+                                            </tbody>
+                                        </table>
+                                        <div class="card-footer d-flex">
+                                            <div> <span>showing: </span><select>
+                                                    <option>10</option>
+                                                    <option>15</option>
+                                                    <option>20</option>
+                                                </select>
+                                            </div>
+                                            <div class="text-right">
+                                                <span>showing 10/100</span> <a href="" class="previous"><svg width="1em" height="1em"
+                                                        viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                                    </svg></a>
+                                                <a href="" class="next"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                        class="bi bi-arrow-right-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                                    </svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Issues" role="tabpanel" aria-labelledby="Issues-tab">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Related Risk ID</th>
+                                                    <th scope="col">Date Raised</th>
+                                                    <th scope="col">RAG/Impact</th>
+                                                    <th scope="col">Consequences</th>
+                                                    <th scope="col">Resolution Plan</th> 
+                                                    <th scope="col">Owner</th> 
+                                                    <th scope="col">Planned Closure Date</th> 
+                                                    <th scope="col">Actual Closure Date</th> 
+                                                    <th scope="col"> Status</th> 
+                                                    <th></th>
+                
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">ISS0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td scope="row">RSK002002</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td>
+                                                        <span class="badge impact-critical text-white">critical</span>
+                                                        <span class="badge impact-major text-white">Major</span>
+                                                        <span class="badge impact-moderate text-white">Modrate</span>
+                                                        <span class="badge impact-minor text-white">Minor</span>
+                                                    </td>
+                                                    <td class="text-primary"> Project Name dev</td>
+                                                    <td>Resolution Plan</td>
+                                                    <td>Motasem Alsmdi</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td><span class="badge complete-state text-white">Compeleted</span></td>
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                        <div class="card-footer d-flex">
+                                            <div> <span>showing: </span><select>
+                                                    <option>10</option>
+                                                    <option>15</option>
+                                                    <option>20</option>
+                                                </select>
+                                            </div>
+                                            <div class="text-right">
+                                                <span>showing 10/100</span> <a href="" class="previous"><svg width="1em" height="1em"
+                                                        viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                                    </svg></a>
+                                                <a href="" class="next"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                        class="bi bi-arrow-right-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                                    </svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Riskes" role="tabpanel" aria-labelledby="Riskes-tab">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Probability</th>
+                                                    <th scope="col">Date Raised</th>
+                                                    <th scope="col">Impact</th>
+                                                    <th scope="col">Severity/ RAG</th>
+                                                    <th scope="col"> Mitigation Plan</th>
+                                                    <th scope="col">Owner</th> 
+                                                    <th scope="col">Planned Closure Date</th> 
+                                                    <th scope="col">Actual Closure Date</th> 
+                                                    <th scope="col"> Status</th> 
+                                                    <th></th>
+                
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">ISS0021</td>
+                                                    <td>Project Name dev></td>
+                                                    <td scope="row">30%</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td>
+                                                        <span class="badge impact-critical text-white">critical</span>
+                                                        <span class="badge impact-major text-white">Major</span>
+                                                        <span class="badge impact-moderate text-white">Modrate</span>
+                                                        <span class="badge impact-minor text-white">Minor</span>
+                                                    </td>
+                                                    <td class="text-primary"> Project Name dev</td>
+                                                    <td>Resolution Plan</td>
+                                                    <td>Motasem Alsmdi</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td class="text-primary">20/10/2020</td>
+                                                    <td><span class="badge complete-state text-white">Compeleted</span></td>
+                                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                                class="bi bi-info-circle" fill="currentColor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                                <circle cx="8" cy="4.5" r="1" />
+                                                            </svg></a>
+                                                        </td>
+                
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                        <div class="card-footer d-flex">
+                                            <div> <span>showing: </span><select>
+                                                    <option>10</option>
+                                                    <option>15</option>
+                                                    <option>20</option>
+                                                </select>
+                                            </div>
+                                            <div class="text-right">
+                                                <span>showing 10/100</span> <a href="" class="previous"><svg width="1em" height="1em"
+                                                        viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                                    </svg></a>
+                                                <a href="" class="next"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                        class="bi bi-arrow-right-short" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                                    </svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -315,11 +767,18 @@
                 today: new Date(),
                 weekMonth: [],
                 weekYear: [],
-                projectProgress: 20
+                projectProgress: 20,
+                totalBudget: 70000,
+                ConsumedBudget: 50300,
+                ConsumedPercent: 0,
+                NotCosumedPercent: 0
 
             },
             created: function () {
                 this.currentWeekDates = this.getCurrentWeek();
+                this.ConsumedPercent = Math.round((this.ConsumedBudget / this.totalBudget) * 100, 1);
+                this.NotCosumedPercent = (100 - this.ConsumedPercent) + '%';
+                this.ConsumedPercent = this.ConsumedPercent + '%'
             },
             methods: {
                 //get weeks days
