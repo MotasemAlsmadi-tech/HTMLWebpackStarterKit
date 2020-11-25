@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>gulp-scss-starter</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="../../styles/main.css"> -->
+</head>
+
+<body>
+    <%= require('html-loader!../blocks/header.html') %>
+    <main class="container pt-5 pb-5 pl-0 pr-0" id="EmployeeLanding">
+
+        <p><b>Make New Request :</b></p>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-lg btn-secondary text-white p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67"
+                        height="54" viewBox="0 0 67 54">
+                        <defs>
+                            <clipPath id="b">
+                                <rect width="67" height="54" />
+                            </clipPath>
+                        </defs>
+                        <g id="a" clip-path="url(#b)">
+                            <g transform="translate(-0.334 -53.875)">
+                                <path
+                                    d="M64.065,84.726H58.6v-2a3.055,3.055,0,0,0-3.052-3.052H54.086v-7.57a2.152,2.152,0,0,0-2.15-2.15H45.911V61.691a2.612,2.612,0,0,0-2.61-2.61H30.948a.977.977,0,0,0,0,1.953H43.3a.657.657,0,0,1,.656.656v8.268c-11.857,0-33.12,0-33.2,0a.975.975,0,0,0-1.042.973v25.1A3.887,3.887,0,0,1,6.1,99.9a4.441,4.441,0,0,1-4.15-4.426V57.234a.976.976,0,0,1,.974-.974h13.12a.971.971,0,0,1,.754.358l2.735,3.344A2.917,2.917,0,0,0,21.8,61.035h5.24a.977.977,0,1,0,0-1.953H21.8a.971.971,0,0,1-.754-.358L18.314,55.38a2.917,2.917,0,0,0-2.266-1.074H2.928A2.931,2.931,0,0,0,0,57.234v38.8a5.843,5.843,0,0,0,5.836,5.836c6.46,0,7.048,0,11.136,0a.977.977,0,0,0,0-1.953H10.188a5.812,5.812,0,0,0,1.484-3.883V71.912H51.936a.2.2,0,0,1,.2.2v7.57H47.958a3.055,3.055,0,0,0-3.052,3.052v2H39.442a2.605,2.605,0,0,0-2.6,2.6V99.914H21.1a.977.977,0,1,0,0,1.953H36.839v2.362a2.605,2.605,0,0,0,2.6,2.6H64.065a2.6,2.6,0,0,0,2.6-2.6v-16.9a2.6,2.6,0,0,0-2.6-2.6Zm-8.516-3.094a1.1,1.1,0,0,1,1.1,1.1v2H54.086V81.632h1.463Zm-8.69,1.1a1.1,1.1,0,0,1,1.1-1.1h4.175v3.094H46.859v-2Zm17.206,22.147H39.441a.65.65,0,0,1-.649-.649V94.719l12.1,4.246a3.253,3.253,0,0,0,2.18-.011l3.873-1.4a.976.976,0,0,0-.665-1.836l-3.873,1.4a1.292,1.292,0,0,1-.868,0L38.792,92.65V87.329a.65.65,0,0,1,.649-.649H64.065a.65.65,0,0,1,.649.649v5.329l-4.729,1.714a.977.977,0,1,0,.666,1.836l4.063-1.473v9.494a.65.65,0,0,1-.649.649Z"
+                                    transform="translate(0)" fill="#fff" />
+                                <path d="M380.545,325.293h-3.66a.977.977,0,0,0,0,1.953h3.66a.977.977,0,1,0,0-1.953Z"
+                                    transform="translate(-326.962 -235.702)" fill="#fff" />
+                            </g>
+                        </g>
+                    </svg>
+                    Business Case
+                </button>
+                <button class="btn btn-lg btn-secondary text-white p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67"
+                        height="54" viewBox="0 0 67 54">
+                        <defs>
+                            <clipPath id="b">
+                                <rect width="67" height="54" />
+                            </clipPath>
+                        </defs>
+                        <g id="a" clip-path="url(#b)">
+                            <g transform="translate(-21.441)">
+                                <g transform="translate(31.2)">
+                                    <g transform="translate(0)">
+                                        <path
+                                            d="M168.3,441.569h-8.515v-2.479a1.091,1.091,0,1,0-2.181,0v2.479h-8.515a1.091,1.091,0,0,0,0,2.181h19.223a1.086,1.086,0,0,0,1.091-1.091A1.1,1.1,0,0,0,168.3,441.569Z"
+                                            transform="translate(-135.133 -389.75)" fill="#fafafa" />
+                                        <path
+                                            d="M53.1,125.2a6.957,6.957,0,0,0-5.277,5.706H43.461a3.889,3.889,0,0,1,3.745-2.864,1.091,1.091,0,1,0,0-2.181,6.073,6.073,0,0,0-5.982,5.045h-8.6a1.08,1.08,0,0,0-1.421,1.035v5.949a2.506,2.506,0,0,0,2.5,2.5H75.825a2.506,2.506,0,0,0,2.5-2.5V108.9a2.506,2.506,0,0,0-2.5-2.5H64.038a1.091,1.091,0,1,0,0,2.181H75.825a.32.32,0,0,1,.319.319v29a.32.32,0,0,1-.319.319H33.7a.32.32,0,0,1-.319-.319v-4.8H72.73a1.091,1.091,0,0,0,0-2.181H68.07a6.073,6.073,0,0,0-5.982-5.045,1.091,1.091,0,1,0,0,2.181,3.88,3.88,0,0,1,3.745,2.864h-4.34a6.928,6.928,0,0,0-6.213-5.86A7.872,7.872,0,0,0,53.1,125.2Zm1.564,2a4.736,4.736,0,0,1,4.616,3.7H50.048A4.727,4.727,0,0,1,54.664,127.209Z"
+                                            transform="translate(-31.2 -94.679)" fill="#fafafa" />
+                                        <path
+                                            d="M46.622,107.491a1.086,1.086,0,0,0-1.091-1.091H33.7a2.506,2.506,0,0,0-2.5,2.5v19.024a1.091,1.091,0,1,0,2.181,0V108.9a.32.32,0,0,1,.319-.319H45.532A1.086,1.086,0,0,0,46.622,107.491Z"
+                                            transform="translate(-31.2 -94.679)" fill="#fafafa" />
+                                        <path
+                                            d="M176.276,29.412a1.086,1.086,0,0,0,1.091-1.091v-2.1h2.4a1.086,1.086,0,0,0,1.091-1.091v-2.17a3.923,3.923,0,0,0-.606-2.093l-1.685-2.655a1.549,1.549,0,0,1-.242-.848V8.647a5.489,5.489,0,0,0-1.344-3.6L172.949.375A1.08,1.08,0,0,0,172.123,0h0a1.091,1.091,0,0,0-.826.386l-3.988,4.671a5.548,5.548,0,0,0-1.322,3.58v8.659a1.545,1.545,0,0,1-.286.9l-1.8,2.589a3.875,3.875,0,0,0-.705,2.236v2.1a1.086,1.086,0,0,0,1.091,1.091l1.983.011v2.1a1.091,1.091,0,0,0,2.181,0v-2.1l.011-.011a1.091,1.091,0,1,0,0-2.181h-3.084V23.023a1.786,1.786,0,0,1,.308-.991l1.8-2.589a3.766,3.766,0,0,0,.672-2.159V8.636a3.344,3.344,0,0,1,.793-2.159l3.195-3.712,3.195,3.7a3.346,3.346,0,0,1,.8,2.17V17.35a3.737,3.737,0,0,0,.584,2.016l1.685,2.655a1.707,1.707,0,0,1,.264.925v1.08h-2.93a1.086,1.086,0,0,0-1.091,1.091,1.064,1.064,0,0,0,.529.925v2.28A1.093,1.093,0,0,0,176.276,29.412Z"
+                                            transform="translate(-148.659)" fill="#fafafa" />
+                                    </g>
+                                    <path
+                                        d="M233.3,226.291v4.7a1.121,1.121,0,0,0,1.024,1.135,1.1,1.1,0,0,0,1.157-1.091v-4.748a1.086,1.086,0,0,0-1.091-1.091h0A1.086,1.086,0,0,0,233.3,226.291Z"
+                                        transform="translate(-211.037 -200.392)" fill="#fafafa" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Ignite a Project
+                </button>
+            </div>
+            <div class="col-12">
+                <hr />
+            </div>
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex">
+                        <h4>
+                            My Tasks
+                            <br>
+                            <span class="header-description text-muted">All Requests summited</span>
+                        </h4>
+                        <div class="filters d-flex">
+                            <div class="checkbox-group d-flex">
+                                <div class="custom-control custom-checkbox ml-2 mr-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Opend</label>
+                                </div>
+                                <div class="custom-control custom-checkbox ml-2 mr-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">closed</label>
+                                </div>
+                            </div>
+                            <div class="input-group  table-header-search">
+                                <input type="text" class="form-control" placeholder="Search in table"
+                                    aria-label="Search in table" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="20"
+                                            viewBox="0 0 21 20">
+                                            <defs>
+                                                <clipPath id="b">
+                                                    <rect width="21" height="20" />
+                                                </clipPath>
+                                            </defs>
+                                            <g id="a" clip-path="url(#b)">
+                                                <path
+                                                    d="M15.84,14.232l-3.719-3.868a6.306,6.306,0,1,0-4.829,2.253,6.241,6.241,0,0,0,3.614-1.142l3.747,3.9a.823.823,0,1,0,1.186-1.141ZM7.293,1.646A4.663,4.663,0,1,1,2.63,6.309,4.668,4.668,0,0,1,7.293,1.646Z"
+                                                    transform="translate(1.971 2.096)" fill="#a1a1a1" />
+                                            </g>
+                                        </svg></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Task Type</th>
+                                    <th scope="col">Requested By</th>
+                                    <th scope="col">Submit Date</th>
+                                    <th scope="col">Project Name</th>
+                                    <th scope="col">Assgined To</th>
+                                    <th scope="col">Status</th> 
+                                    <th scope="col" class="text-center">Open/Closed</th>
+                                    <th scope="col">Closed Date</th>
+                                    <th></th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Project Plan</td>
+                                    <td><b>Ibrahim</b></td>
+                                    <td class="text-primary">20/10/2020</td>
+                                    <td>Project Name dev</td>
+                                    <td><b>Motasem Alsmadi</b></td>
+                                    <td><span class="badge badge-danger">Rejected</span></td>
+                                    <td class="text-center"><span class="badge status-open">Open</span></td>
+                                    <td class="text-primary">30/10/2020</td>
+                                    <td>
+                                        <button class="btn btn-link btn-block p-1 border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                              </svg>
+                                            Approve
+                                        </button>
+                                        <button class="btn btn-link text-danger p-1 btn-block  border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm-.354 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
+                                              </svg>
+                                            Reject
+                                        </button>
+                                    </td>
+                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                class="bi bi-info-circle" fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path
+                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                                <circle cx="8" cy="4.5" r="1" />
+                                            </svg></a>
+                                        </td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="row">Project Clouser</td> 
+                                    <td><b>Ibrahim</b></td>
+                                    <td class="text-primary">20/10/2020</td>
+                                    <td>Project Name dev</td>
+                                    <td><b>Motasem Alsmadi</b></td>
+                                    <td><span class="badge badge-success">Approved</span></td>
+
+                                    <td class="text-center"><span class="badge status-closed">Closed</span></td>
+                                    <td class="text-primary">30/10/2020</td>
+                                    <td>
+                                        <button class="btn btn-link btn-block p-1 border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                              </svg>
+                                            Approve
+                                        </button>
+                                        <button class="btn btn-link text-danger p-1 btn-block  border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm-.354 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
+                                              </svg>
+                                            Reject
+                                        </button>
+                                    </td>
+                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                        class="bi bi-info-circle" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                        <circle cx="8" cy="4.5" r="1" />
+                                    </svg></a>
+                                </td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="row">Scope Statment</td>
+                                    <td><b>Ibrahim</b></td>
+                                    <td class="text-primary">20/10/2020</td>
+                                    <td>Project Name dev</td>
+                                    <td><b>Motasem Alsmadi</b></td>
+                                    <td><span class="badge badge-default">Pending</span></td>
+                                    <td class="text-center"><span class="badge status-closed">Closed</span></td>
+                                    <td class="text-primary">30/10/2020</td>
+                                    <td>
+                                        <button class="btn btn-link btn-block p-1 border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                              </svg>
+                                            Approve
+                                        </button>
+                                        <button class="btn btn-link text-danger p-1 btn-block  border-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clipboard-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm-.354 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
+                                              </svg>
+                                            Reject
+                                        </button>
+                                    </td>
+                                    <td><a class="info-btn" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                        class="bi bi-info-circle" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                        <circle cx="8" cy="4.5" r="1" />
+                                    </svg></a>
+                                </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer d-flex">
+                        <div> <span>showing: </span><select>
+                                <option>10</option>
+                                <option>15</option>
+                                <option>20</option>
+                            </select>
+                        </div>
+                        <div class="text-right">
+                            <span>showing 10/100</span> <a href="" class="previous"><svg width="1em" height="1em"
+                                    viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                </svg></a>
+                            <a href="" class="next"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                    class="bi bi-arrow-right-short" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <%= require('html-loader!../blocks/footer.html') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"> 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+</body>
+ 
+</html>

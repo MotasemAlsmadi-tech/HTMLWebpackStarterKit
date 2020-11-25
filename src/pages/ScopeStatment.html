@@ -178,7 +178,7 @@
 
                                         <div class="form-group">
                                             <label for="type">Scope<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" v-model="scopeDecription" id=""
+                                            <textarea class="form-control" v-model="TypeDescription" id=""
                                                 rows="3"></textarea>
 
                                         </div>
@@ -304,7 +304,7 @@
 
                                         <div class="form-group">
                                             <label for="type">Scope<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" v-model="scopeDecription" id=""
+                                            <textarea class="form-control" v-model="TypeDescription" id=""
                                                 rows="3"></textarea>
 
                                         </div>
@@ -479,6 +479,41 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <div class="table-data" v-if="AcceptanceList.length > 0">
+                                            <label for="" class="d-flex m-0"><b>Acceptance Criteria</b>
+                                                <span>
+                                                    {{AcceptanceList.length}} items</span>
+                                                <button type="button" class="btn btn-link btn-sm" data-toggle="collapse"
+                                                    data-target="#Acceptance"><i
+                                                        class="fa fa-minus"></i></button></label>
+                                            <table class="table table-striped collapse show" id="Acceptance">
+                                                <thead>
+                                                    <tr class="text-primary">
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Scope</th>
+                                                        <th scope="col" style="width: 82px;"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="" v-for="(item, index) in AcceptanceList">
+                                                        <th scope="row">{{index +1 }}</th>
+                                                        <td>{{item.objDescription}}</td>
+                                                        <td>
+                                                            <button type="button" class="btn  p-1 btn-sm border-0"><img
+                                                                    class="table-action-img"
+                                                                    src="../../img/svg/Edit-btn.svg"
+                                                                    @click="editItem(index,AcceptanceList)"></button>
+                                                            <button type="button" class="btn  p-1 btn-sm border-0"><img
+                                                                    class="table-action-img"
+                                                                    src="../../img/svg/Delete-btn.svg"
+                                                                    @click="deleteItem(index,AcceptanceList)"></button>
+                                                        </td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                         </div>
@@ -559,7 +594,7 @@
                     projectBudgetCurrency: "SAR",
                     projectManager: "Motasem Alsmadi"
                 },
-                ContentTypes: ["Assumptions", "Deliverables"],
+                ContentTypes: ["Assumptions", "Deliverables","Acceptance"],
                 selectedType: "",
                 TypeDescription: "",
                 updatedItem: {
@@ -586,7 +621,7 @@
                         active: false
                     },
                 ],
-                scopeDecription: "",
+                TypeDescription: "",
                 inScopeList: [{
                         description: " in scope description 1",
                     },
@@ -624,6 +659,15 @@
                         objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
                     }
                 ],
+                AcceptanceList: [{
+                        type: "Acceptance",
+                        objDescription: "Description text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
+                    },
+                    {
+                        type: "Acceptance",
+                        objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
+                    }
+                ],
                 updatedInScopeItem: {},
                 attachmentList:[
                     {
@@ -650,6 +694,15 @@
 
             },
             methods: {
+                editItem: function (i, list) {
+                    this.selectedType = list[i].type;
+                    this.TypeDescription = list[i].objDescription;
+
+                    this.updatedItem = {
+                        listType: list[i].type,
+                        itemIndex: i
+                    }
+                },
                 saveScopeItem: function () {
                     var obj = {
                         type: this.selectedType,
@@ -657,13 +710,23 @@
                     }
                     debugger;
                     var newList;
-                    if (this.updatedItem.listType.length > 0 && this.scopeDecription.length > 0) {
+                    if (this.updatedItem.listType.length > 0 && this.TypeDescription.length > 0) {
 
                         switch (this.updatedItem.listType) {
-                       
+                            
+                            case "Acceptance":
+                                newList = this.AcceptanceList
+                                newList[this.updatedItem.itemIndex].objDescription = this.TypeDescription;
+                                this.AcceptanceList = newList;
+                                this.updatedItem = {
+                                    listType: "",
+                                    itemIndex: ""
+                                }
+                                this.TypeDescription = "";
+                                break;
                             case "Assumptions":
                                 newList = this.asumptionsList
-                                newList[this.updatedItem.itemIndex].objDescription = this.scopeDecription;
+                                newList[this.updatedItem.itemIndex].objDescription = this.TypeDescription;
                                 this.asumptionsList = newList;
                                 this.updatedItem = {
                                     listType: "",
@@ -673,7 +736,7 @@
                                 break;
                                 case "Deliverables":
                                 newList = this.DeliverablesList
-                                newList[this.updatedItem.itemIndex].objDescription = this.scopeDecription;
+                                newList[this.updatedItem.itemIndex].objDescription = this.TypeDescription;
                                 this.DeliverablesList = newList;
                                 this.updatedItem = {
                                     listType: "",
@@ -688,6 +751,10 @@
                         return
                     } else {
                         switch (this.selectedType) {
+                            
+                            case "Acceptance":
+                                this.AcceptanceList.push(obj)
+                                break;
                             case "Assumptions":
                                 this.asumptionsList.push(obj)
                                 break;
@@ -720,13 +787,13 @@
                 editInScope: function (i, list) {
                     this.updatedInScopeItem = list[i];
                     this.updatedInScopeItem.itemIndex = i.toString();
-                    this.scopeDecription = list[i].description;
+                    this.TypeDescription = list[i].description;
 
                 },
                 saveInScopeItem: function () {
                     debugger;
                     var obj = this.updatedInScopeItem;
-                    obj.description = this.scopeDecription;
+                    obj.description = this.TypeDescription;
                     var newList = this.inScopeList;
                     if (this.updatedInScopeItem.itemIndex) {
                         newList[parseInt(this.updatedInScopeItem.itemIndex)] = obj;
@@ -734,12 +801,12 @@
                         this.inScopeList.push(obj);
                     }
                     this.updatedInScopeItem={};
-                    this.scopeDecription="";
+                    this.TypeDescription="";
                 },
                 saveOutScopeItem: function () {
                     
                     var obj = this.updatedInScopeItem;
-                    obj.description = this.scopeDecription;
+                    obj.description = this.TypeDescription;
                     var newList = this.outScopeList;
                     if (this.updatedInScopeItem.itemIndex) {
                         newList[parseInt(this.updatedInScopeItem.itemIndex)] = obj;
@@ -747,7 +814,7 @@
                         this.outScopeList.push(obj);
                     }
                     this.updatedInScopeItem={};
-                    this.scopeDecription="";
+                    this.TypeDescription="";
                 },
                 addAttachment: function () {
 

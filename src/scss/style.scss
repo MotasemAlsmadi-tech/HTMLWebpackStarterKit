@@ -9,6 +9,9 @@ body {
     font-weight: 400;
 }
 
+.container{
+    max-width: 90%;
+}
 .page-header__title {
     flex: 1;
 }
@@ -688,3 +691,10 @@ table {
 .impact-major{background-color: $impact-major;}
 .impact-moderate{background-color: $impact-moderate;}
 .impact-minor{background-color: $impact-minor;}
+
+td{
+    .dropdown-item{
+        font-size: 14px;
+    color: $brand-primary
+    }
+}
