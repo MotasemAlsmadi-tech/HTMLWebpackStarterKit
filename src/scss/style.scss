@@ -280,6 +280,40 @@ button[data-toggle="collapse"] {
         }
     }
 }
+.DetailsTabs{
+    .nav-item {
+        .nav-link {
+            background:#fff;
+            color: $heading-text-color;
+            margin: 0 5px;
+            box-shadow: 0 5px 24px -13px #000;
+            min-width: 100px;
+            text-align: center;
+            svg{
+                width: 50px;
+                height: 50px;
+                display: block;
+                margin: 3px auto;
+                padding: 7px;
+                fill: $brand-primary;
+            }
+            &.active{
+                background: $brand-secondary;
+                color: #fff;
+                svg{
+                    fill: #fff;
+                }
+            }
+            &:hover {
+                color: #fff;
+                background: #68bbaf;
+                border-bottom: 0;
+    
+            }
+        }
+    }
+}
+
 
 @media all and (min-width: 992px) {
     .navbar {
