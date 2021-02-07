@@ -143,7 +143,99 @@
                     </div>
                 </div>
             </div>
-             
+            <div class="v-wizard">
+                <!-- Step #1-->
+                <div class="step " :class="{'active':steps[0].active}">
+                    <div class="step-header mb-2 d-flex">
+                        <div class="step__count">{{steps.indexOf(steps[0])+1}}</div>
+                        <h5 class="step__title">{{steps[0].stepName}}</h5>
+                        <hr>
+                        <button type="button" @click="steps[0].active = !steps[0].active" data-toggle="collapse"
+                            :data-target="'#'+steps[0].id" :aria-expanded="steps[0].active"
+                            class="btn btn-icon btn-circle text-primary btn-light btn-sm no-collapsable"
+                            :class="{'collapsed': !steps[0].active}" :aria-controls="steps[0].id">
+                            <i :class="['fa' , steps[0].active? 'fa-minus' : 'fa-plus']"></i>
+                        </button>
+                    </div>
+
+                    <div class="card collapse" :class="{'show': steps[0].active}" :id="steps[0].id">
+
+
+
+                        <div class="card-body">
+                            <section>
+                                <div>
+                                    <b class="section-title text-primary">Request Information</b>
+                                </div>
+                                <div class="row mt-3 mb-3">
+                                    <div class="col-md-4 col-sm-12">
+                                       
+                                        <div class="form-group">
+                                            <label for="type">Request Type <span class="text-danger">*</span></label>
+                                            <select class="form-control" v-model="requestTypeSelected">
+                                                <option v-for="item in requestTypes">{{item}}</option>
+                                            </select>
+
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="col-md-8 col-sm-12">
+                                       
+                                        <div class="form-group">
+                                            <label for="type">Request Justification <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" v-model="requestJustification" id=""
+                                                rows="3"></textarea>
+
+                                        </div>
+                                      
+                                    </div>
+                                 
+                                </div>
+                            </section>
+                            <section>
+                                <div>
+                                    <b class="section-title text-primary">IMPACT of Project being put ‘on hold’ or
+                                        cancelled</b>
+                                </div>
+                                <div class="row mt-3 mb-3">
+                                   
+                                    <div class="col-md-4 col-sm-12">
+                                       
+                                        <div class="form-group">
+                                            <label for="type">Impact on other projects  or other entities <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" v-model="impactOnOtherProjects" id=""
+                                                rows="3"></textarea>
+
+                                        </div>
+                                      
+                                    </div>
+                                  
+                                    <div class="col-md-4 col-sm-12">
+                                       
+                                        <div class="form-group">
+                                            <label for="type">Financial losses <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" v-model="financialLosses" id=""
+                                                rows="3"></textarea>
+
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                       
+                                        <div class="form-group">
+                                            <label for="type">Financial losses <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" v-model="otherImpacts" id=""
+                                                rows="3"></textarea>
+
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="form-group d-flex form-actions mt-4">
 
                 <button type="submit" class="btn btn-outline-primary">Cancel</button>
@@ -193,123 +285,24 @@
                     projectBudgetCurrency: "SAR",
                     projectManager: "Motasem Alsmadi"
                 },
-                scopeManagTypes: ["Assumptions", "Constraints", "Risks"],
-                OverViewType: ["Business Case / Need", "Objectives", "In Scope", "Out of Scope", "Deliverables",
-                    "Key Milestones"
-                ],
 
-
-
-
-                selectedType: "",
-                selectedOverViewType: "",
-                scopeDecriptionOverVeiw: "",
-                scopeDecription: "",
-                resourceName: "",
-                SHname: "",
-                SHrole: "",
-                baselineResourceDate: "",
-                forcastedResourceDate: "",
-                commManagType: "",
-
-                updatedItem: {
-                    listType: "",
-                    itemIndex: ""
-                },
-                updateStakeholderItem: {},
                 steps: [{
-                        id: "STP1",
-                        stepName: "Project Overview",
-                        valid: false,
-                        active: true
+                    id: "STP1",
+                    stepName: "Request Information & IMPACT of Project",
+                    valid: false,
+                    active: true
 
-                    },
-                    {
-                        id: "STP2",
-                        stepName: "Project Stakeholders",
-                        valid: false,
-                        active: false
-
-                    },
-                    {
-                        id: "STP3",
-                        stepName: "Assumptions / Constraints / Risks",
-                        valid: false,
-                        active: false
-
-                    }
-                ],
-
-                risksList: [{
-                        type: "Risk",
-                        name: "Risk 1",
-                        probability: "description text",
-                        mitigation: "description text",
-                        impact: "High"
-                    },
-                    {
-                        type: "Risk",
-                        name: "Risk 2",
-                        probability: "description text",
-                        mitigation: "description text",
-                        impact: "High"
-                    }
-                ],
-
-
-
-                objectivesList: [{
-                        type: "Objectives",
-                        objDescription: "Description text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    },
-                    {
-                        type: "Objectives",
-                        objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    }
-                ],
-                asumptionsList: [{
-                        type: "Assumptions",
-                        objDescription: "Description text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    },
-                    {
-                        type: "Assumptions",
-                        objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    }
-                ],
-                constraintsList: [{
-                        type: "Constraints",
-                        objDescription: "Description text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    },
-                    {
-                        type: "Constraints",
-                        objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    }
-                ],
-                RisksList: [{
-                        type: "Risks",
-                        objDescription: "Description text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    },
-                    {
-                        type: "Risks",
-                        objDescription: "Description2 text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text testDescription text test",
-                    }
-                ],
-
-                StakeholderList: [],
-                BNeedCaseList: [],
-                InScopeList: [],
-                OutScopeList: [],
-                DeliverablesList: [],
-                KeyMilestonesList: [],
-                updatedItem: {
-                        listType: "",
-                        itemIndex: "",
-                        objDescription:""
-                    }
+                }],
+                requestJustification:'',
+                requestTypeSelected:'',
+                requestTypes:["On Hold","Cancellation"],
+                impactOnOtherProjects:'',
+                financialLosses:'',
+                otherImpacts:''
             },
             created: function () {
 
-                this.selectedType = this.scopeManagTypes[1];
+
 
             },
             methods: {
@@ -335,17 +328,17 @@
                     this.updatedItem = {
                         listType: list[i].type,
                         itemIndex: i,
-                        objDescription:list[i].objDescription
+                        objDescription: list[i].objDescription
                     }
                 },
-                editOverViewItem:function(i, list){
+                editOverViewItem: function (i, list) {
                     debugger;
                     this.selectedOverViewType = list[i].type;
                     this.scopeDecriptionOverVeiw = list[i].objDescription;
                     this.updatedItem = {
                         listType: list[i].type,
                         itemIndex: i,
-                        objDescription:list[i].objDescription
+                        objDescription: list[i].objDescription
                     }
 
                 },
@@ -405,8 +398,8 @@
                                     itemIndex: ""
                                 }
                                 this.scopeDecriptionOverVeiw = "";
-                                break; 
-                                case "In Scope":
+                                break;
+                            case "In Scope":
                                 newList = this.InScopeList
                                 newList[this.updatedItem.itemIndex].objDescription = this
                                     .scopeDecriptionOverVeiw;
@@ -417,7 +410,7 @@
                                 }
                                 this.scopeDecriptionOverVeiw = "";
                                 break;
-                                case "Out of Scope":
+                            case "Out of Scope":
                                 newList = this.OutScopeList
                                 newList[this.updatedItem.itemIndex].objDescription = this
                                     .scopeDecriptionOverVeiw;
@@ -428,7 +421,7 @@
                                 }
                                 this.scopeDecriptionOverVeiw = "";
                                 break;
-                                case "Deliverables":
+                            case "Deliverables":
                                 newList = this.DeliverablesList
                                 newList[this.updatedItem.itemIndex].objDescription = this
                                     .scopeDecriptionOverVeiw;
@@ -439,7 +432,7 @@
                                 }
                                 this.scopeDecriptionOverVeiw = "";
                                 break;
-                                case "Key Milestones":
+                            case "Key Milestones":
                                 newList = this.KeyMilestonesList
                                 newList[this.updatedItem.itemIndex].objDescription = this
                                     .scopeDecriptionOverVeiw;
@@ -463,7 +456,7 @@
                             case "Business Case / Need":
                                 this.BNeedCaseList.push(obj)
                                 break;
-                                case "In Scope":
+                            case "In Scope":
                                 this.InScopeList.push(obj)
                                 break;
                             case "Out of Scope":
@@ -472,7 +465,7 @@
                             case "Deliverables":
                                 this.DeliverablesList.push(obj)
                                 break;
-                                case "Key Milestones":
+                            case "Key Milestones":
                                 this.KeyMilestonesList.push(obj)
                                 break;
                             default:
